@@ -1,0 +1,8 @@
+{
+  "name": "EchoTherapy Companion",
+  "description": "A multimodal mental health companion that listens, analyzes, and provides calming coping strategies using Gemini 3 Pro.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}

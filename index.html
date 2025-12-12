@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EchoTherapy Companion</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Quicksand', 'sans-serif'],
+            },
+            boxShadow: {
+              'soft': '0 10px 40px -10px rgba(0,0,0,0.08)',
+              'glow': '0 0 20px rgba(99, 102, 241, 0.3)',
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        font-family: 'Quicksand', sans-serif;
+        background: linear-gradient(135deg, #fdfbf7 0%, #eef2ff 50%, #f0fdf4 100%);
+        min-height: 100vh;
+        color: #334155;
+        overflow-x: hidden;
+      }
+      /* Subtle noise overlay for texture */
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+        pointer-events: none;
+        z-index: -1;
+      }
+
+      .flower-petal {
+        transform-origin: center center;
+        transition: all 2s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      
+      @keyframes tremble {
+        0%, 100% { transform: translate(0, 0) rotate(0deg); }
+        25% { transform: translate(1px, 1px) rotate(1deg); }
+        50% { transform: translate(-1px, -1px) rotate(-1deg); }
+        75% { transform: translate(-1px, 1px) rotate(0deg); }
+      }
+      .animate-tremble {
+        animation: tremble 0.5s ease-in-out infinite;
+      }
+
+      @keyframes floatUp {
+        0% { transform: translateY(0) scale(1); opacity: 0.8; }
+        100% { transform: translateY(-100px) scale(0); opacity: 0; }
+      }
+      .particle {
+        animation: floatUp 3s ease-out infinite;
+      }
+
+      @keyframes breathe {
+        0%, 100% { transform: scale(1); opacity: 0.4; }
+        50% { transform: scale(1.4); opacity: 0.1; }
+      }
+      .animate-breathe {
+        animation: breathe 6s ease-in-out infinite;
+      }
+
+      /* Missing Animation Added Here */
+      @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(30px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .animate-fade-in-up {
+        animation: fadeInUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+      }
+      
+      .glass-card {
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.6);
+      }
+      
+      .glass-card-dark {
+        background: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(16px);
+        border: 1px solid rgba(255, 255, 255, 0.8);
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.33.0",
+    "lucide-react": "https://esm.sh/lucide-react@^0.561.0",
+    "html2canvas": "https://esm.sh/html2canvas@1.4.1",
+    "canvas-confetti": "https://esm.sh/canvas-confetti@1.6.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
