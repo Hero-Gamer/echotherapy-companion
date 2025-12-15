@@ -8,7 +8,7 @@ This contains everything you need to run your app locally.
 
 **GitHub Repository:** [https://github.com/Hero-Gamer/echotherapy-companion](https://github.com/Hero-Gamer/echotherapy-companion)
 
-View your app in AI Studio: [https://aistudio.google.com/apps/drive/1pQJqvOGb8kUZrs_he5AIJG1SNrNQr11](https://aistudio.google.com/apps/drive/1pQJqvOGb8kUZrs_he5AIJG1SNrNQr11)
+View your app in AI Studio: [https://ai.studio/apps/drive/1pQJqvOGb8kUZrs_he5AIJG1SNrNQr11_?fullscreenApplet=true](https://ai.studio/apps/drive/1pQJqvOGb8kUZrs_he5AIJG1SNrNQr11_?fullscreenApplet=true)
 
 ## Run Locally
 
